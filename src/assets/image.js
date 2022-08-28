@@ -4,7 +4,7 @@ import gatito from './img/gatito.jpg'
 
 
 export default [
-    petshop,
+    petshop ,
     gatito
 
 ]

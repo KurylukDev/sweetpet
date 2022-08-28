@@ -7,7 +7,7 @@ function NavBar() {
       <header className="App-header">
         <nav className="App-nav">
           <div className='logo-header'>
-          <img className='logo-header' src={imagenes[0]} alt='logo sweet pet'/>
+          <img className='logo' src={imagenes[0]} alt='logo sweet pet'/>
           <h1>Sweet Pet</h1>
           </div>
           <div className='links-navbar'>

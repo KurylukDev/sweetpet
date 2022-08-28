@@ -13,7 +13,7 @@
 
 .logo-header{
   display:flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -23,7 +23,7 @@
   font-size: 6vh;
 }
 
-.logo-header img{
+.logo{
   margin: 0;
   padding: 0;
   width: 100px;
@@ -56,6 +56,10 @@
 }
 
 .gatito{
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:50px 25%;
+  width: 50%;
+  height: 50%;
 }
