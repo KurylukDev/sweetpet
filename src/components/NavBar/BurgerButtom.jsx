@@ -2,22 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const BurguerButtom = () => {
+const BurgerButtom = () => {
     return (
-      <Burguer>
+      <Burger>
   <div className="icon nav-icon-7">
     <span></span>
     <span></span>
     <span></span>
   </div>
-  </Burguer>
+  </Burger>
   )
 }
 
 
-export default BurguerButtom
+export default BurgerButtom
 
-const Burguer = styled.div`
+const Burger = styled.div`
 .nav-icon-7 {
   width: 35px;
   height: 30px;

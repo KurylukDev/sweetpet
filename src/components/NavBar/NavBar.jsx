@@ -1,7 +1,7 @@
 import React from 'react'
 import imagenes from '../../assets/image'
 import styled from 'styled-components'
-import BurguerButtom from './BurguerButtom'
+import BurgerButtom from './BurgerButtom'
 import CartWidget from './CartWidget'
 
 function NavBar() {
@@ -22,8 +22,8 @@ function NavBar() {
     <img className='cart links'  src={imagenes[1]} alt='Carrito'/>
     <CartWidget  items='1'/>
     </div>
-    <div className='burguer'>
-    <BurguerButtom />
+    <div className='burger'>
+    <BurgerButtom />
     </div>
     </NavContainer>
     </>
@@ -105,7 +105,7 @@ img{
 }
 
 
-.burguer{
+.burger{
   @media(min-width: 768px){
     display:none;
   }
