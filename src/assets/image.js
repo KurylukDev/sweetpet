@@ -1,10 +1,9 @@
-import petshop from './img/petshop.png'
-import gatito from './img/gatito.jpg'
-
+import logo from './img/petshop.png'
+import carrito from './img/cart.jpg'
 
 
 export default [
-    petshop ,
-    gatito
+      logo,
+      carrito
 
 ]
