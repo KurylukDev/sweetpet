@@ -1,0 +1,21 @@
+import {useEffect, useState} from 'react'
+import Card from './Card'
+
+
+const App = () => {
+
+    const [datos, setDatos] = useState([])
+    useEffect(() =>{
+    
+        fetch('https://api.mercadolibre.com/sites/MLA/search?q=mate')
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }, [])
+
+    return (
+        <Card products={datos}/>
+    )
+}
+
+export default App

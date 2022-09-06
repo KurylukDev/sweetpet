@@ -1,0 +1,13 @@
+import React from 'react'
+
+const Card = ({datos}) => {
+    return(
+        <ul>
+        {
+            datos.map(item => (<li>{item.title}</li>))
+        }
+        </ul>
+        )
+}
+
+export default Card

@@ -1,4 +1,4 @@
-import imagenes from '../assets/image';
+import imagenes from '../../assets/image';
 import '../App.css';
 import React from 'react'
 

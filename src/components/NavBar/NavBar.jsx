@@ -57,7 +57,7 @@ a{
 }
 img{
   margin:0;
-  height: 8vh;
+  height: 60px;
 }
 
 
