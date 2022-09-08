@@ -3,17 +3,17 @@ import {useState, useEffect} from 'react'
 
 
 
-const ItemCount = ({onAdd}) =>{
+const ItemCount = ({onAdd, stock, initial}) =>{
 
 
-    const [number, setNumber] = useState(1);
+    const [number, setNumber] = useState(initial);
 
     useEffect(() =>{
         setNumber(1)
     },[])
     
     const ClickPlus = () => {
-        if(number < 5){
+        if(number < stock){
             console.log('+1')
             setNumber(number + 1)
         }
@@ -22,7 +22,7 @@ const ItemCount = ({onAdd}) =>{
 
     const ClickLess = () => {
 
-        if(number > 1){
+        if(number > initial){
             console.log('-1')
             setNumber(number - 1)
 
