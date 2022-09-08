@@ -14,6 +14,7 @@ const Items = () => {
         {
           id: 1,
           stock: 5,
+          initial: 1,
           onAdd:{onAdd},
           title: "Cat Chow sabor carne y pollo 1kg",
           price: "450",
@@ -24,6 +25,7 @@ const Items = () => {
         {
           id: 2,
           stock: 5,
+          initial: 1,
           onAdd:{onAdd},
           title: "Whiskas sabor Carne 3kg",
           price: "650",
@@ -43,7 +45,7 @@ const Items = () => {
             <Item
                     key={item.id}
                     stock={item.stock}
-                    initial={1}
+                    initial={item.initial}
                     onAdd={onAdd}
                     title={item.title}
                     price={item.price}
