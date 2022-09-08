@@ -1,9 +1,6 @@
 import ItemCount from './ItemCount'
 
-const Item = ({image, title, price, brand, description, onAdd, stock, item}) => {   //hook
-    // const [isValid, setIsValid] = useState(false);
-    // const [show, setShow] = useState(0);
-    // const [title, setTitle] = useState("Coder");
+const Item = ({image, title, price, brand, description, onAdd, stock, initial}) => {
 
 
     return (
@@ -13,7 +10,7 @@ const Item = ({image, title, price, brand, description, onAdd, stock, item}) => 
             </div>
             <div className="video-info">
             <h3>{title}</h3>
-            <ItemCount onAdd={onAdd}/>
+            <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
             <p>Precio: $ {price}</p>
             <h4>Marca {brand}</h4>
             <p>{description}</p>

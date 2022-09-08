@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react'
 //import images from './assets/image'
 import NavBar from './components/NavBar/NavBar'
@@ -11,10 +12,15 @@ import ItemListContainer from './components/ItemListContainer'
 
 const App = () => {
   return(
-    <>
+    <BrowserRouter>
     <NavBar/>
-    <ItemListContainer/>
-    </>
+    <Routes>
+      <Route path='/category' element={<p>Hola como estas</p>}/>
+      <Route path='/' element={ <ItemListContainer/> }/>
+      <Route path='/item' element={<p>chauchau</p>}/>
+      <Route path='*' element={<p>error</p>}/>
+    </Routes>
+    </BrowserRouter> 
   );
 }
 

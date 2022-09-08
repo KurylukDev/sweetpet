@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import React from 'react'
 import imagenes from '../../assets/image'
 import styled from 'styled-components'
@@ -8,10 +9,10 @@ function NavBar() {
   return (
     <>
     <NavContainer>
-      <div className='titleLogo'>
+     <Link to='/'><div className='titleLogo'>
       <img src={imagenes[0]} alt='logo'></img>
       <h1>Sweet Pet</h1>
-      </div>
+      </div></Link>
     <div className='links'>
       <a href='/'>Home</a>
       <a href='/'>Shop</a>
