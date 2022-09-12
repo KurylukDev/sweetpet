@@ -1,17 +1,31 @@
 import styled from 'styled-components'
-
+import Loading from './Loading'
 import Item from "./Item";
 
 const ItemList = ({ items }) => {
-    return (
-        <ItemsContainer>
+    if ( items.length > 0 ){
+        return (
+            <>
+    
+    <ItemsContainer>
         {
-            items.length > 0
-            ? items.map(item => <Item key={item.id} id={item.id} title={item.name} price={item.price} imageUrl={item.image[0]} stock={item.stock} />)
-            : <img className='loading' src='https://i.pinimg.com/originals/ac/b7/ec/acb7ec095b453e0d784d8c20b1f62d4c.gif' alt='loading'></img>
+            items.map(item => <Item key={item.id} id={item.id} title={item.name} price={item.price} imageUrl={item.image[0]} stock={item.stock} />)
+
         }
         </ItemsContainer>
-    );
+            
+            
+            </>
+        );
+    
+        }else{
+    
+            return(
+                <Loading/>
+    
+                )
+    
+        }
 }
 
 export default ItemList;

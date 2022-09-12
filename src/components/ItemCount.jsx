@@ -1,7 +1,11 @@
 import styled from "styled-components"
 import {useState, useEffect} from 'react'
 
-const ItemCount = ({onAdd, stock, initial}) =>{
+const ItemCount = ({stock, initial}) =>{
+
+    const onAdd = () => {
+        alert("You have selected " + number  + " items.");
+    }
 
 
     const [number, setNumber] = useState(initial);
@@ -12,7 +16,6 @@ const ItemCount = ({onAdd, stock, initial}) =>{
     
     const ClickPlus = () => {
         if(number < stock){
-            console.log('+1')
             setNumber(number + 1)
         }
         
@@ -21,7 +24,6 @@ const ItemCount = ({onAdd, stock, initial}) =>{
     const ClickLess = () => {
 
         if(number > initial){
-            console.log('-1')
             setNumber(number - 1)
 
         }
@@ -31,10 +33,12 @@ const ItemCount = ({onAdd, stock, initial}) =>{
     return(
     <>
     <ShopButton>
-    <button onClick={ClickLess}>-</button>
+    <CantButton>
+    <button className="btnLess" onClick={ClickLess}>-</button>
     <span> {number} </span>
-    <button onClick={ClickPlus}>+</button>
-    <button onClick={onAdd}>Agregar</button>
+    <button className="btnPlus" onClick={ClickPlus}>+</button>
+    </CantButton>
+    <AddButton onClick={onAdd}>Agregar</AddButton>
     </ShopButton>
     </>
     )
@@ -45,5 +49,57 @@ export default ItemCount
 
 
 const ShopButton = styled.div`
+display:flex;
+margin: 10px;
+button{
+  cursor: pointer;
+}
+`
+
+
+const CantButton = styled.div`
+.btnLess{
+
+    transition: opacity 150ms;
+    width: 22px;
+    height: 40px;
+    border: 2px solid #234196;
+    color: #3c3c3c;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+}
+
+    .btnPlus{
+        transition: opacity 150ms;
+        width: 22px;
+        height: 40px;
+        border: 2px solid #234196;
+        color: #3c3c3c;
+        border-radius: 10px;
+        outline: none;
+        background: transparent;
+        
+    }
+
+span{
+    border-radius: 0;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+  `
+
+  const AddButton = styled.button`
+  margin: 0px 50px;
+  width:50%;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+  background-color:#234196;
+  border-radius: 25px;
   
   `
