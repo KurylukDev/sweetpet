@@ -3,20 +3,20 @@ import imagenes from '../../assets/image'
 import styled from 'styled-components'
 import BurgerButtom from './BurgerButtom'
 import CartWidget from './CartWidget'
-
+import {Link} from 'react-router-dom'
 function NavBar() {
   return (
     <>
     <NavContainer>
-      <div className='titleLogo'>
+      <Link to='/'><div className='titleLogo'>
       <img src={imagenes[0]} alt='logo'></img>
       <h1>Sweet Pet</h1>
-      </div>
+      </div></Link>
     <div className='links'>
-      <a href='/'>Home</a>
-      <a href='/'>Shop</a>
-      <a href='/'>About</a>
-      <a href='/'>Contact</a>
+    <Link className='linkDom' to='/home'><p href='/'>Home</p></Link>
+      <Link className='linkDom' to='/shop'><p href='/'>Shop</p></Link>
+      <Link className='linkDom' to='/shop/perro'><p href='/'>Perros</p></Link>
+      <Link className='linkDom' to='/shop/gato'><p href='/'>Gatos</p></Link>
     </div>
     <div>
     <img className='cart links'  src={imagenes[1]} alt='Carrito'/>
@@ -33,6 +33,9 @@ export default NavBar;
 
 
 const NavContainer = styled.nav`
+.linkDom{
+  text-decoration: none;
+}
 h1{
   position: absolute;
   top: 26px;
@@ -50,7 +53,7 @@ background-color: #1fa9e7;
 display: flex;
 align-items: center;
 justify-content: space-between;
-a{
+p{
   color: white;
   text-decoration: none;
   margin-right: 1rem;
@@ -70,7 +73,7 @@ img{
   margin-right: auto;
   text-align: center;
   transition: all .5s ease;
-  a{
+  p{
     color: white;
     font-size: 2rem;
     display: block;
@@ -78,7 +81,7 @@ img{
   @media(min-width: 768px){
     position: initial;
     margin: 0;
-    a{
+    p{
       font-size: 1rem;
       color: white;
       display: inline;
@@ -97,7 +100,7 @@ img{
   left: 0;
   right: 0;
   text-align: center;
-  a{
+  p{
     font-size: 2rem;
     margin-top: 1rem;
     color: white;

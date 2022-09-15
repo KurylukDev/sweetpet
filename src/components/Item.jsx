@@ -1,18 +1,21 @@
 import styled from 'styled-components'
-const Item = ({ id, title, stock, price, imageUrl }) => {
+import { Link } from 'react-router-dom'
+const Item = ({ id, title, stock, price, imageUrl, category }) => {
     return (
     <ProductContainer>
-            <img className='imgProducts' src={imageUrl} alt={title} />
-            <div className='infoProducts'>
-        <h2 className='titleProduct'>{title}</h2>
-                <div>
-                    <strong>$ {price}</strong>
-                </div>
-                <div>
-                    <p>{stock} unid.</p>
-                </div>
-                <button className='buttonProducts'>Detalles del producto</button>
-                </div>
+      <Link to={`/item/${id}`}>
+                <div className="card">
+  <div className="card__contImg">
+  <img className='card__img' src={imageUrl} alt={title} />
+  </div>
+  <div className="card__contText">
+    <p className="card__pCategory">{category}</p>
+    <p className="card__pTitle">{stock} unid.</p>
+    <h4 className='card__title'>{title}</h4>
+    <strong className="card__price">$ {price}</strong>
+  </div>
+</div>
+</Link>
         </ProductContainer>
     );
 }
@@ -20,35 +23,58 @@ const Item = ({ id, title, stock, price, imageUrl }) => {
 export default Item;
 
 const ProductContainer = styled.div`
-background-color: rgba(231, 231, 231, 0.514);
-    border: 2px #939393 solid;
-    border-radius:5px;
-    box-shadow: 5px 5px 5px #939393;
-    width: 25vw;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+font-family: helvetica;
+.card {
+    float: left;
+    border-radius: 10px;
     margin: 10px;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px 0px #707070;
+    transition: all 200ms;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 1px 2px 5px 5px rgba(0,0,0,.1)
+  }
+  
+  .card__contImg {
+    padding: 2px;
+    width: 100%;
+    background: #f4f4f4;
+  }
+  
+  .card__img {
+    background-color:white;
+    width:100%;
+  }
+  
+  .card__contText {
+    color: #1979e1;
+    text-decoration: none;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .card__pTitle {
+    color: #707070;
+    margin-top:1px;
+  }
 
-    .imgProducts{
-        background-color:white;
-     width:80%;
-    }
-
-    .infoProducts{
-        dispaly:flex;
-        
-    }
-
-    .titleProduct{
-        font-size:1rem;
-    }
-    .buttonProducts{
-        width:20vw;
-        height:100%;
-        font-size: 1rem;
-        background-color:rgba(2, 2, 2, 0.514);
-        color:white;
-        display: flex;
-        justify-content:center;
-        align-item:center;
-        margin:5px auto;
-    }
+  .card__pCategory{
+    font-size:12px;
+    color: #707070;
+    margin-top:10px;
+    margin-bottom:4px;
+  }
+  
+  .card__price {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f3722c;
+  }
 `;

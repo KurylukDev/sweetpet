@@ -9,7 +9,7 @@ const ItemList = ({ items }) => {
     
     <ItemsContainer>
         {
-            items.map(item => <Item key={item.id} id={item.id} title={item.name} price={item.price} imageUrl={item.image[0]} stock={item.stock} />)
+            items.map(item => <Item key={item.id} id={item.id} title={item.name} price={item.price} imageUrl={item.image[0]} stock={item.stock} category={item.categoryId} />)
 
         }
         </ItemsContainer>
@@ -32,16 +32,11 @@ export default ItemList;
 
 
 const ItemsContainer = styled.div`
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .loading{
-        width:100%;
-        height:800px;
-        position:relative;
-        top:50;
-        right:50;
-    }
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-item:center;
+margin: 0 auto;
+    padding: 40px 0;
+    max-width:1200px;
 `;
