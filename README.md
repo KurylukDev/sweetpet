@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# E-Commerce Front-end React PetShop
 
 ![](/gif.gif)
 
-## Available Scripts
+## Herramientas Utilizadas:
 
+<ul>
+<li> Javascript </li>
+<li> Styled-Components </li>
+<li> Css </li>
+<li> React </li>
+<li> Hooks </li>
+</ul>
