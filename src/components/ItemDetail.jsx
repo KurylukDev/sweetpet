@@ -1,8 +1,15 @@
 import ItemCount from './ItemCount';
 import styled from 'styled-components'
 import Loading from './Loading'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ item }) => {
+    const[itemCount, setItemCount] = useState(0)
+    const onAdd = (count) => {
+        alert("You have selected " + count + " items.");
+        setItemCount(count)
+    }
 
     if ( item && item.image ){
     return (
@@ -18,7 +25,11 @@ const ItemDetail = ({ item }) => {
                         <p>{item.description}</p>
                         <Price>$ {item.price}</Price>
                         <p>{item.stock} unidades en stock</p>
-                    <ItemCount stock={item.stock} initial={1}/>
+                        {
+                            itemCount === 0
+                           ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/>
+                           : <Link to='/cart'><CheckoutButton>checkout</CheckoutButton></Link>
+                        }
                     </InfoContainer>
                 </ContainerDetail>
             </DetailContainer>
@@ -40,6 +51,18 @@ const ItemDetail = ({ item }) => {
 
 export default ItemDetail;
 
+const CheckoutButton = styled.button`
+  margin: 0px 50px;
+  width:50%;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #fff;
+  background-color:#234196;
+  border-radius: 25px;
+  
+  `
 
   const DetailContainer = styled.div`
   padding-left: 0.25rem;

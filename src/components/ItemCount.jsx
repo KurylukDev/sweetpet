@@ -1,11 +1,7 @@
 import styled from "styled-components"
 import {useState, useEffect} from 'react'
 
-const ItemCount = ({stock, initial}) =>{
-
-    const onAdd = () => {
-        alert("You have selected " + number  + " items.");
-    }
+const ItemCount = ({stock, initial, onAdd}) =>{
 
 
     const [number, setNumber] = useState(initial);
@@ -38,7 +34,7 @@ const ItemCount = ({stock, initial}) =>{
     <span> {number} </span>
     <button className="btnPlus" onClick={ClickPlus}>+</button>
     </CantButton>
-    <AddButton onClick={onAdd}>Agregar</AddButton>
+    <AddButton onClick={() => onAdd(number)}>Agregar</AddButton>
     </ShopButton>
     </>
     )

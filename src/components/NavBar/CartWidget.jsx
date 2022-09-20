@@ -30,7 +30,9 @@ const Cart = styled.div`
     align-item: center;
     justify-content: center;
     font-size: 1rem;
+    color:white;
     width:100%;
+    background-color:red;
     border: 2px red solid;
     border-radius: 50%;
 }
