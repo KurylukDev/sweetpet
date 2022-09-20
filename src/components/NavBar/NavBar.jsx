@@ -13,14 +13,14 @@ function NavBar() {
       <h1>Sweet Pet</h1>
       </div></Link>
     <div className='links'>
-    <Link className='linkDom' to='/home'><p href='/'>Home</p></Link>
+      <Link className='linkDom' to='/home'><p href='/'>Home</p></Link>
       <Link className='linkDom' to='/shop'><p href='/'>Shop</p></Link>
       <Link className='linkDom' to='/shop/perro'><p href='/'>Perros</p></Link>
       <Link className='linkDom' to='/shop/gato'><p href='/'>Gatos</p></Link>
     </div>
     <div>
-    <img className='cart links'  src={imagenes[1]} alt='Carrito'/>
-    <CartWidget  items='1'/>
+    <Link to='/cart'><img className='cart links'  src={imagenes[1]} alt='Carrito'/>
+    <CartWidget  items='0'/></Link>
     </div>
     <div className='burger'>
     <BurgerButtom />

@@ -6,7 +6,11 @@ const CartWidget = (props) => {
         <>
         <Cart className='links'>
               <div className="cantidad">
-              <span className='number'>{props.items}</span>
+                {
+                  props.items >= 1
+                ?<span className='number'>{props.items}</span>
+                :<></>
+              }
               </div>
         </Cart>
               
