@@ -1,9 +1,10 @@
 import React from 'react'
-import imagenes from '../../assets/image'
+import imagenes from '../../utils/image'
 import styled from 'styled-components'
 import BurgerButtom from './BurgerButtom'
 import CartWidget from './CartWidget'
 import {Link} from 'react-router-dom'
+
 function NavBar() {
   return (
     <>
@@ -20,7 +21,7 @@ function NavBar() {
     </div>
     <div>
     <Link to='/cart'><img className='cart links'  src={imagenes[1]} alt='Carrito'/>
-    <CartWidget  items='0'/></Link>
+    <CartWidget/></Link>
     </div>
     <div className='burger'>
     <BurgerButtom />

@@ -1,3 +1,4 @@
+import { db } from '../utils/fbConfig'
 import ItemList from '../components/ItemList';
 import fetchCustom from "../utils/customFetch";
 import { useEffect, useState } from 'react';
@@ -17,12 +18,12 @@ const ItemListContainer = () => {
     //componentDidUpdate
     useEffect(() => {
         if(idCategory){
-            fetchCustom(2000, products.filter(item => item.categoryId === idCategory))
+            fetchCustom(500, products.filter(item => item.categoryId === idCategory))
                   .then(res => setDatos(res))
                   .catch(err => console.log(err))
 
         }else{
-            fetchCustom(2000, products)
+            fetchCustom(500, products)
             .then(res => setDatos(res))
             .catch(err => console.log(err))
 

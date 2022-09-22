@@ -3,12 +3,18 @@ import styled from 'styled-components'
 import Loading from './Loading'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from "react";
+import { CartContext } from '../context/CartContext'
+
 
 const ItemDetail = ({ item }) => {
     const[itemCount, setItemCount] = useState(0)
-    const onAdd = (count) => {
-        alert("You have selected " + count + " items.");
-        setItemCount(count)
+    const ctx = useContext(CartContext)
+    
+    const onAdd = (quantity) => {
+        alert("You have selected " + quantity + " items.");
+        setItemCount(quantity)
+        ctx.addItem(item,quantity)
     }
 
     if ( item && item.image ){

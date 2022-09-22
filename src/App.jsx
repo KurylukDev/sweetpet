@@ -2,16 +2,14 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './containers/IteamDetailContainer';
-//import Footer from './components/Footer'
-//import './App.css';
 import Cart from './pages/Cart'
 import ItemListContainer from './containers/ItemListContainer'
 import Home from './pages/Home'
+import CartContextProvider from './context/CartContext'
 
-
-
-const App = () => {
+const App = () => { 
   return(
+    <CartContextProvider>
     <BrowserRouter>
     <NavBar/>
     <Routes>
@@ -24,6 +22,7 @@ const App = () => {
       <Route path='*' element={<p>Error</p>}/>
     </Routes>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const CartWidget = (props) => {
+import { useCartContext } from '../../context/CartContext';
+const CartWidget = () => {
+  const {totalProducts} = useCartContext();
     return (
         <>
         <Cart className='links'>
               <div className="cantidad">
                 {
-                  props.items >= 1
-                ?<span className='number'>{props.items}</span>
+                  totalProducts() >= 1
+                ?<span className='number'>{totalProducts()}</span>
                 :<></>
               }
               </div>
