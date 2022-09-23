@@ -10,6 +10,8 @@ const Cart = () => {
   const ctx = useContext(CartContext)
   const { clearCart,totalPrice } = useCartContext()
 
+
+if(ctx){
   return(
     <CartContainer>
   <CartPage>
@@ -26,13 +28,18 @@ const Cart = () => {
   </CartRow>
    </CartContainer>
   );
+
+}else{
+  <CartContainer>
+    <p>carrito vacio</p>
+  </CartContainer>
+}
 }
 
 export default Cart
 
 const CartPage = styled.div`
 display: flex;
-justify-content:center;
 align-items:center;
 flex-direction:column;
 margin: 25px;
@@ -50,7 +57,7 @@ const CartContainer = styled.div`
 display: flex;
 flex-direction: row;
 justify-content:center;
-aling-content:center;
 background-color: #ededed;
+height:100vh;
 
 `
