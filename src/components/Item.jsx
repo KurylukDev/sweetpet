@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-const Item = ({ id, title, stock, price, imageUrl, category }) => {
+const Item = ({ id, title, stock, price, image, category }) => {
     return (
     <ProductContainer>
       <Link to={`/item/${id}`}>
                 <div className="card">
   <div className="card__contImg">
-  <img className='card__img' src={imageUrl} alt={title} />
+  <img className='card__img' src={image} alt={title} />
   </div>
   <div className="card__contText">
     <p className="card__pCategory">{category}</p>

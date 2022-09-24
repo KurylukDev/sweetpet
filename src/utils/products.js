@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
     {
         id: 1,
         name: "Master Dog Carne 15KG",
@@ -268,4 +268,4 @@ const products = [
 
 module.exports = {
     products,
-  }
+  }*/

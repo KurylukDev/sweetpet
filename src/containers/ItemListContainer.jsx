@@ -1,33 +1,19 @@
-import { db } from '../utils/fbConfig'
 import ItemList from '../components/ItemList';
-import fetchCustom from "../utils/customFetch";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-const { products } = require('../utils/products');
+import  { firestoreFetch}  from '../utils/fbFetch'
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const { idCategory } = useParams()
 
-    if (idCategory){
-
-    }else
-
-    console.log(datos);
-
     //componentDidUpdate
     useEffect(() => {
-        if(idCategory){
-            fetchCustom(500, products.filter(item => item.categoryId === idCategory))
-                  .then(res => setDatos(res))
-                  .catch(err => console.log(err))
+ 
+            firestoreFetch(idCategory)
+            .then(result => setDatos(result))
+            .catch(err => console.log(err));
 
-        }else{
-            fetchCustom(500, products)
-            .then(res => setDatos(res))
-            .catch(err => console.log(err))
-
-        }
     }, [idCategory]);
 
     return (
