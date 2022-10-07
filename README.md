@@ -22,7 +22,7 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. A voluptatum et esse, 
 ## Autor ✒️
 **Simon Femia Kuryluk**
 
-* [KurylukDev@gmail.com](kurylukdev@gmail.com)
+* kurylukdev@gmail.com
 * [LinkedIn](https://www.linkedin.com/in/simon-femia-kuryluk//)
 * [Porfolio web](https://t4.ftcdn.net/jpg/02/77/55/27/360_F_277552748_Ayjfyarx71S2y4i82EYrHjsGczAjUmqV.jpg/)
 
